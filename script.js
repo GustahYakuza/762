@@ -1,25 +1,23 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const compliments = [];
+// script.js
 
-    // Carregar elogios do arquivo JSON
-    fetch('compliments.json')
-        .then(response => response.json())
-        .then(data => {
-            compliments.push(...data.compliments);
-            updateCompliment();
-        });
+// Array de elogios
+const compliments = [
+    "Você é incrível!",
+    "Seu sorriso ilumina meu dia!",
+    "Ninguém é tão especial quanto você!",
+    // Adicione mais elogios conforme desejado
+];
 
-    const complimentElement = document.getElementById('compliment');
-    const changeComplimentButton = document.getElementById('changeCompliment');
+// Função para exibir um elogio aleatório
+function showRandomCompliment() {
+    const randomIndex = Math.floor(Math.random() * compliments.length);
+    const compliment = compliments[randomIndex];
 
-    let index = 0;
+    document.getElementById('compliment').innerText = compliment;
+}
 
-    changeComplimentButton.addEventListener('click', function () {
-        index = (index + 1) % compliments.length;
-        updateCompliment();
-    });
+// Event listener para o botão de próximo elogio
+document.getElementById('changeCompliment').addEventListener('click', showRandomCompliment);
 
-    function updateCompliment() {
-        complimentElement.textContent = `Você é ${compliments[index]}`;
-    }
-});
+// Chama a função para exibir um elogio inicial ao carregar a página
+showRandomCompliment();
