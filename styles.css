@@ -8,15 +8,26 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    flex-direction: column; /* Adicionado para empilhar os elementos verticalmente em telas pequenas */
+}
+
+header {
+    background-color: #ff7070;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adicionado sombreamento */
 }
 
 .container {
     text-align: center;
+    margin-top: 20px;
 }
 
-h1 {
-    font-size: 36px;
+h2 {
+    font-size: 24px;
     color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Adicionado sombreamento */
 }
 
 button {
@@ -34,4 +45,15 @@ button {
 button:hover {
     background-color: #e5673b;
     transform: translateY(-3px);
+}
+
+/* Adicionado regra de mídia para estilos específicos de celular */
+@media (max-width: 600px) {
+    h2 {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 14px;
+    }
 }
