@@ -68,3 +68,12 @@ button:hover {
         font-size: 14px;
     }
 }
+@media (max-width: 600px) {
+    body {
+        /* Adicione estilos específicos para telas menores, se necessário */
+    }
+    header {
+        position: static; /* Garanta que o cabeçalho não seja fixado em telas pequenas */
+    }
+}
+
