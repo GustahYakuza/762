@@ -4,8 +4,12 @@ function login() {
 
     // Simulação de lógica de login (substitua por uma autenticação real)
     if (username === 'seu_usuario' && password === 'sua_senha') {
+        // Salva o estado de autenticação
+        localStorage.setItem('isLoggedIn', 'true');
+
         alert('Login bem-sucedido!');
-        // Adicione redirecionamento ou lógica adicional após o login
+        // Redireciona para a página inicial após o login
+        window.location.href = "index.html";
     } else {
         alert('Usuário ou senha incorretos. Tente novamente.');
     }
