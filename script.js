@@ -10,8 +10,8 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
     // Verifica as credenciais (usuário 'anna', senha 'gatinha' como exemplo)
     if (username === 'anna' && password === 'gatinha') {
         // Exibe o conteúdo principal após o login bem-sucedido
-        document.getElementById('loginForm').classList.add('hidden');
-        document.getElementById('mainContent').classList.remove('hidden');
+        document.getElementById('loginContainer').classList.add('hidden');
+        document.getElementById('mainContainer').classList.remove('hidden');
     } else {
         alert('Credenciais inválidas. Tente novamente.');
     }
@@ -21,7 +21,12 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
     passwordInput.value = '';
 });
 
-let compliments = [];
+let compliments = [
+    "Você é incrível!",
+    "Seu sorriso ilumina meu dia!",
+    "Ninguém é tão especial quanto você!",
+    // Adicione mais elogios conforme desejado
+];
 
 function showRandomCompliment() {
     const randomIndex = Math.floor(Math.random() * compliments.length);
@@ -31,18 +36,4 @@ function showRandomCompliment() {
     complimentElement.textContent = compliment;
 }
 
-// Adiciona essa função para carregar os elogios do arquivo JSON
-function loadCompliments() {
-    fetch('compliments.json') // Verifique se o caminho para o arquivo está correto
-        .then(response => response.json())
-        .then(data => {
-            compliments = data;
-            showRandomCompliment();
-        })
-        .catch(error => console.error('Erro ao carregar os elogios:', error));
-}
-
 document.getElementById('changeCompliment').addEventListener('click', showRandomCompliment);
-
-// Carrega os elogios ao iniciar o script
-loadCompliments();
