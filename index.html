@@ -7,33 +7,30 @@
     <title>Elogios para Você</title>
 </head>
 <body>
+
     <header>
         <h1>Elogios Surpresa</h1>
     </header>
 
-    <div class="container">
+    <div class="container" id="loginContainer">
         <form id="loginForm">
-            <div class="login-container">
-                <label for="username">Usuário:</label>
-                <input type="text" id="username" name="username" required>
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" name="username" required>
 
-                <label for="password">Senha:</label>
-                <input type="password" id="password" name="password" required>
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
 
-                <button type="submit">Entrar</button>
-            </div>
+            <button type="submit">Entrar</button>
         </form>
+    </div>
 
-        <div class="hidden white-background rounded-border" id="mainContent">
-            <button id="changeCompliment">Trocar Elogio</button>
-            <div id="compliment">
-                <span class="compliment-text"></span>
-            </div>
+    <div class="container hidden" id="mainContainer">
+        <button id="changeCompliment">Trocar Elogio</button>
+        <div id="compliment">
+            <span class="compliment-text"></span>
         </div>
     </div>
 
-    <script>
-        // Seu código JavaScript aqui
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
