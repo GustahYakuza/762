@@ -1,5 +1,3 @@
-// script.js
-
 const compliments = [
     "Você é incrível!",
     "Seu sorriso ilumina meu dia!",
