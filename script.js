@@ -10,7 +10,13 @@ function showRandomCompliment() {
     const compliment = compliments[randomIndex];
 
     const complimentElement = document.getElementById('compliment');
-    complimentElement.innerHTML = `<span class="compliment-text">${compliment}</span><br><i class="fas fa-heart"></i>`;
+    complimentElement.innerHTML = `<span class="compliment-text">${compliment}</span><br><span class="emoji" id="heart"></span>`;
+
+    // Substitua o emoji pelo coração usando Twemoji
+    twemoji.parse(document.getElementById('heart'), {
+        folder: 'svg',
+        ext: '.svg',
+    });
 }
 
 document.getElementById('changeCompliment').addEventListener('click', showRandomCompliment);
