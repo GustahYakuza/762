@@ -11,23 +11,16 @@
 </head>
 <body>
     <header>
-        <h1>Elogios para Minha Vida</h1>
-        <p>Seu sorriso ilumina meu dia!</p>
+        <h1>Elogios Surpresa</h1>
     </header>
-    <div class="container">
-        <h2 id="compliment">Você é...</h2>
-        <button id="changeCompliment">Próximo Elogio</button>
-        <a href="login.html" id="loginLink">Login</a>
-    </div>
-    <script src="script.js"></script>
-    <script>
-        // Adicione esta lógica para verificar se o usuário está autenticado
-        const isLoggedIn = localStorage.getItem('isLoggedIn');
 
-        if (!isLoggedIn) {
-            // Redireciona para a página de login se não estiver autenticado
-            window.location.href = "login.html";
-        }
-    </script>
+    <div class="container">
+        <form>
+            <button id="changeCompliment">Trocar Elogio</button>
+            <div id="compliment"></div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
