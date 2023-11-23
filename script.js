@@ -1,26 +1,25 @@
-const compliments = [
-    "Você é incrível!",
-    "Seu sorriso ilumina meu dia!",
-    "Ninguém é tão especial quanto você!",
-    // Adicione mais elogios conforme desejado
-];
+document.addEventListener('DOMContentLoaded', function () {
+    const compliments = [];
 
-function showRandomCompliment() {
-    const randomIndex = Math.floor(Math.random() * compliments.length);
-    const compliment = compliments[randomIndex];
+    // Carregar elogios do arquivo JSON
+    fetch('compliments.json')
+        .then(response => response.json())
+        .then(data => {
+            compliments.push(...data.compliments);
+            updateCompliment();
+        });
 
-    const complimentElement = document.querySelector('.compliment-text');
-    complimentElement.textContent = compliment;
+    const complimentElement = document.getElementById('compliment');
+    const changeComplimentButton = document.getElementById('changeCompliment');
 
-    // Substitua o emoji pelo coração usando Twemoji
-    const heartEmoji = document.getElementById('heart');
-    heartEmoji.innerHTML = '';
-    twemoji.parse(heartEmoji, {
-        folder: 'svg',
-        ext: '.svg',
+    let index = 0;
+
+    changeComplimentButton.addEventListener('click', function () {
+        index = (index + 1) % compliments.length;
+        updateCompliment();
     });
-}
 
-document.getElementById('changeCompliment').addEventListener('click', showRandomCompliment);
-
-showRandomCompliment();
+    function updateCompliment() {
+        complimentElement.textContent = `Você é ${compliments[index]}`;
+    }
+});
