@@ -1,25 +1,17 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const compliments = [];
+// ... (seu código existente)
 
-    // Carregar elogios do arquivo JSON
-    fetch('compliments.json')
+// Adicione essa função para carregar os elogios do arquivo JSON
+function loadCompliments() {
+    fetch('compliments.json') // Verifique se o caminho para o arquivo está correto
         .then(response => response.json())
         .then(data => {
-            compliments.push(...data.compliments);
-            updateCompliment();
-        });
+            compliments = data;
+            showRandomCompliment();
+        })
+        .catch(error => console.error('Erro ao carregar os elogios:', error));
+}
 
-    const complimentElement = document.getElementById('compliment');
-    const changeComplimentButton = document.getElementById('changeCompliment');
+document.getElementById('changeCompliment').addEventListener('click', showRandomCompliment);
 
-    let index = 0;
-
-    changeComplimentButton.addEventListener('click', function () {
-        index = (index + 1) % compliments.length;
-        updateCompliment();
-    });
-
-    function updateCompliment() {
-        complimentElement.textContent = `Você é ${compliments[index]}`;
-    }
-});
+// Carrega os elogios ao iniciar o script
+loadCompliments();
