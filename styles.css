@@ -3,12 +3,12 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: url('https://drive.google.com/file/d/15eVXxJNXTHsdhZJQqL_vP2pmKjtQB9jg/view?usp=drive_link') center/cover; /* Adicionado fundo romântico */
+    background: url('caminho/para/o/seu/fundo-romantico.jpg') center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    flex-direction: column; /* Empilhar os elementos verticalmente */
+    flex-direction: column;
 }
 
 header {
@@ -17,7 +17,7 @@ header {
     text-align: center;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Ocupar a largura total */
+    width: 100%;
 }
 
 .container {
@@ -25,10 +25,24 @@ header {
     margin-top: 20px;
 }
 
-h2 {
-    font-size: 24px;
-    color: #333;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 button {
@@ -39,7 +53,6 @@ button {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    margin-top: 20px;
     transition: background-color 0.3s ease, transform 0.3s ease-in-out;
 }
 
@@ -48,32 +61,14 @@ button:hover {
     transform: translateY(-3px);
 }
 
-/* Adicionado regra de mídia para estilos específicos de celular */
 @media (max-width: 600px) {
     header {
-        position: fixed; /* Fixar o cabeçalho no topo da tela */
-        top: 0;
-        z-index: 1; /* Garantir que o cabeçalho esteja acima de outros elementos */
+        position: static;
     }
 
-    .container {
-        margin-top: 80px; /* Aumentar a margem para compensar o cabeçalho fixo */
-    }
-
-    h2 {
-        font-size: 20px;
-    }
-
-    button {
-        font-size: 14px;
+    form {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
     }
 }
-@media (max-width: 600px) {
-    body {
-        /* Adicione estilos específicos para telas menores, se necessário */
-    }
-    header {
-        position: static; /* Garanta que o cabeçalho não seja fixado em telas pequenas */
-    }
-}
-
