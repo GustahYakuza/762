@@ -13,10 +13,7 @@ function showRandomCompliment() {
     complimentElement.innerHTML = `<span class="compliment-text">${compliment}</span><br><span class="emoji" id="heart"></span>`;
 
     // Substitua o emoji pelo coração usando Twemoji
-    twemoji.parse(document.getElementById('heart'), {
-        folder: 'svg',
-        ext: '.svg',
-    });
+    twemoji.parse(document.getElementById('heart'));
 }
 
 document.getElementById('changeCompliment').addEventListener('click', showRandomCompliment);
