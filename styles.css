@@ -82,3 +82,14 @@ button:hover {
         opacity: 1;
     }
 }
+
+.compliment-text {
+    font-size: 24px;
+    color: #333; /* Cor do texto */
+}
+
+.fa-heart {
+    color: #ff7070; /* Cor do ícone de coração */
+    font-size: 32px;
+    margin-top: 10px; /* Espaço entre o texto e o ícone */
+}
